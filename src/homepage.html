@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Portfolio Website</title>
-	<link rel="stylesheet" href="style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        const target = $el.dataset.target;
+                        const $target = document.getElementById(target);
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                        const $navbarItems = $target.querySelectorAll('.navbar-item');
+                        $navbarItems.forEach(function ($item) {
+                            $item.classList.toggle('is-active');
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Ham<span>moon</span></a>
-        <ul class="navlist">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="Aboutpage.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contactme.html">Contact Me</a></li>
-        </ul>
-        <div class="bx bx-menu" id="menu-icon"></div>
+    <header class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-item logo">Ham<span>moon</span></a>
+            <label class="navbar-burger" id="menu-icon" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <ul class="navbar-end">
+                <li><a class="navbar-item is-active" href="homepage.html">Home</a></li>
+                <li><a class="navbar-item" href="Aboutpage.html">About</a></li>
+                <li><a class="navbar-item" href="services.html">Services</a></li>
+                <li><a class="navbar-item" href="portfolio.html">Portfolio</a></li>
+                <li><a class="navbar-item" href="blog.html">Blog</a></li>
+                <li><a class="navbar-item" href="contactme.html">Contact</a></li>
+            </ul>
+        </div>
     </header>
-    <section class="home" id="home">
-        <div class="home-text">
-            <div class="slide">
-                <span class="one">Hello</span>
-                <span class="two">I am </span>
-            </div>
-            <h1>Hanim Abdurezak</h1>
-            <h3>Website Designer and <span>Programmer</span></h3>
-            <div class="button">
-                <a href="#" class="btn">About Me</a>
+
+    <section class="section home has-background-dark" id="home">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-three-fifths">
+                    <div class="has-text-centered">
+                        <div class="mb-3">
+                            <span class="is-size-4-desktop is-size-5-mobile has-background-primary has-text-white px-4 py-2">Hello</span>
+                            <span class="is-size-4-desktop is-size-5-mobile has-text-light">I am</span>
+                        </div>
+                        <h1 class="is-size-1-desktop is-size-2-mobile has-text-white">Hanim Abdurezak</h1>
+                        <h3 class="is-size-3-desktop is-size-4-mobile has-text-white">Website Designer and <span>Programmer</span></h3>
+                        <div class="mt-4">
+                            <a href="Aboutpage.html" class="button is-primary is-rounded is-medium">About Me</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <footer>
-        <p> copyright messages 2023</p>
+    <footer class="section has-background-dark is-fixed-bottom footer">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="is-flex is-justify-content-flex-start is-fixed-bottom">
+                        <a href="https://t.me/Moon648" target="_blank"><i class="fab fa-telegram fa-lg has-text-light"></i></a>
+                        <a href="https://www.instagram.com/ham64_81?igshid=NGVhN2U2NjQ0Yg=="><i class="fab fa-instagram fa-lg has-text-light"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg has-text-light"></i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="has-text-light">&copy; copy right 2023. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
 </body>
 
 </html>

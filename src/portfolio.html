@@ -3,76 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style1.css">
+    <title>Portfolio Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        const target = $el.dataset.target;
+                        const $target = document.getElementById(target);
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                        const $navbarItems = $target.querySelectorAll('.navbar-item');
+                        $navbarItems.forEach(function ($item) {
+                            $item.classList.toggle('is-active');
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class="portfolioheader">
-        <ul class="navlist">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="Aboutpage.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contactme.html">Contact Me</a></li>
-        </ul>
-    </header>
-    <section class="Portfolio" id="portfolio">
-        <div class="main-text">
-            <h2><span>Latest  </span>project</h2>
+    <header class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-item logo">Ham<span>moon</span></a>
+            <label class="navbar-burger" id="menu-icon" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
         </div>
-        <div class="portfolio-content">
-            <div class="row">
-                <img src="../image/project1.jpg" alt="">
-                <div class="layer">
-                    <h5>Visual design</h5>
-                    <p>Check out 5 design updates for the top web designand development companies.</p>
-                    <a href="#"> <i class="bx bx-link-external"></i></a>
-                </div>
+        <div class="navbar-menu" id="navMenu">
+            <ul class="navbar-end">
+                <li><a class="navbar-item" href="homepage.html">Home</a></li>
+                <li><a class="navbar-item" href="Aboutpage.html">About</a></li>
+                <li><a class="navbar-item" href="services.html">Services</a></li>
+                <li><a class="navbar-item is-active" href="portfolio.html">Portfolio</a></li>
+                <li><a class="navbar-item" href="blog.html">Blog</a></li>
+                <li><a class="navbar-item" href="contactme.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <section class="section has-background-dark Portfolio" id="portfolio">
+        <div class="container">
+            <div class="main-text">
+                <h2><span>Latest  </span>project</h2>
             </div>
-            <div class="row">
-                <img src="../image/project2.jpg" alt="">
-                <div class="layer">
-                    <h5>Visual design</h5>
-                    <p>Check out 5 design updates for the top web designand development companies.</p>
-                    <a href="#"> <i class="bx bx-link-external"></i></a>
+            <div class="columns is-multiline is-centered is-variable is-5 portfolio-content">
+                <div class="column is-12-mobile is-4-tablet is-4-desktop has-text-light">
+                    <div class="project">
+                        <img src="image/project1.jpg" alt="">
+                        <div class="layer">
+                            <h5>Visual design</h5>
+                            <p>Visual design is essential in creating a positive user experience and effectively communicating information.</p>
+                            <a href="#"><i class="fas fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <img src="../image/project3.jpg" alt="">
-                <div class="layer">
-                    <h5>Visual design</h5>
-                    <p>Check out 5 design updates for the top web designand development companies.</p>
-                    <a href="#"> <i class="bx bx-link-external"></i></a>
+                <div class="column  is-12-mobile is-4-tablet is-4-desktop has-text-light">
+                    <div class="project">
+                        <img src="image/project2.jpg" alt="">
+                        <div class="layer">
+                            <h5>Web Development Projects</h5>
+                            <p>Develop an e-commerce website with features like product listings, shopping carts, and secure payment processing.</p>
+                            <a href="#"><i class="fas fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <img src="../image/project4.jpg" alt="">
-                <div class="layer">
-                    <h5>Visual design</h5>
-                    <p>Check out 5 design updates for the top web designand development companies.</p>
-                    <a href="#"> <i class="bx bx-link-external"></i></a>
+                <div class="column  is-12-mobile is-4-tablet is-4-desktop has-text-light">
+                    <div class="project">
+                        <img src="image/project3.jpg" alt="">
+                        <div class="layer">
+                            <h5>Mobile App Development Projects</h5>
+                            <p>Develop a mobile app for a specific purpose, such as a task manager, budgeting tool, or fitness tracker.</p>
+                            <a href="#"><i class="fas fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <img src="../image/project5.jpg" alt="">
-                <div class="layer">
-                    <h5>Visual design</h5>
-                    <p>Check out 5 design updates for the top web designand development companies.</p>
-                    <a href="#"> <i class="bx bx-link-external"></i></a>
+                <div class="column is-12-mobile is-4-tablet is-4-desktophas-text-light">
+                    <div class="project">
+                        <img src="image/project4.jpg" alt="">
+                        <div class="layer">
+                            <h5>Game Development Projects</h5>
+                            <p>Develop a puzzle game with interactive gameplay mechanics and challenging levels.</p>
+                            <a href="#"><i class="fas fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <img src="../image/project6.jpg" alt="">
-                <div class="layer">
-                    <h5>Visual design</h5>
-                    <p>Check out 5 design updates for the top web designand development companies.</p>
-                    <a href="#"> <i class="bx bx-link-external"></i></a>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop has-text-light">
+                    <div class="project">
+                        <img src="image/project5.jpg" alt="">
+                        <div class="layer">
+                            <h5>Data Science and Machine Learning Projects</h5>
+                            <p>Build a recommendation system that suggests products based on user preferences.</p>
+                            <a href="#"><i class="fas fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop has-text-light">
+                    <div class="project is-3 is-size-5-mobile">
+                        <img src="image/project6.jpg" alt="">
+                        <div class="layer">
+                            <h5>Open Source Contributions</h5>
+                            <p>Contribute to open source projects by fixing bugs, implementing new features, or improving documentation.</p>
+                            <a href="#"><i class="fas fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
-        <p> copyright messages 2023</p>
+
+    <footer class="section has-background-dark footer">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="is-flex is-justify-content-flex-start is-fixed-bottom">
+                        <a href="https://t.me/Moon648" target="_blank"><i class="fab fa-telegram fa-lg has-text-light"></i></a>
+                        <a href="https://www.instagram.com/ham64_81?igshid=NGVhN2U2NjQ0Yg=="><i class="fab fa-instagram fa-lg has-text-light"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg has-text-light"></i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="has-text-light">&copy; copy right 2023. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

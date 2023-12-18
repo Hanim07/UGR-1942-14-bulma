@@ -4,51 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services Page</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        const target = $el.dataset.target;
+                        const $target = document.getElementById(target);
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                        const $navbarItems = $target.querySelectorAll('.navbar-item');
+                        $navbarItems.forEach(function ($item) {
+                            $item.classList.toggle('is-active');
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class="serviceheader">
-        <ul class="navlist">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="Aboutpage.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contactme.html">Contact Me</a></li>
-        </ul>
-    </header>
-    <section class="Services" id="Services">
-        <div class="main-text">
-            <h2><span>My</span>Services</h2>
+    <header class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-item logo">Ham<span>moon</span></a>
+            <label class="navbar-burger" id="menu-icon" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
         </div>
-        <div class="services-content">
-            <div class="box">
-                <div class="s-icons">
-                    <i class='bx bx-mobile-alt'></i>
+        <div class="navbar-menu" id="navMenu">
+            <ul class="navbar-end">
+                <li><a class="navbar-item" href="homepage.html">Home</a></li>
+                <li><a class="navbar-item" href="Aboutpage.html">About</a></li>
+                <li><a class="navbar-item is-active" href="services.html">Services</a></li>
+                <li><a class="navbar-item" href="portfolio.html">Portfolio</a></li>
+                <li><a class="navbar-item" href="blog.html">Blog</a></li>
+                <li><a class="navbar-item" href="contactme.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section services has-background-dark" id="Services">
+        <div class="container">
+            <div class="main-text">
+                <h2 class="title is-2 has-text-light">My <span>Services</span></h2>
+            </div>
+            <div class="columns is-multiline is-centered is-variable is-5">
+                <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                    <div class="box">
+                        <div class="service-icons">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="title is-4">Programming</h3>
+                        <p>One way to categorize the activities is in terms of the professional's area of experience.</p>
+                        <a href="#" class="button is-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                    <div class="box">
+                        <div class="service-icons">
+                            <i class="fab fa-sketch"></i>
+                        </div>
+                        <h3 class="title is-4">Graphic Design</h3>
+                        <p>One way to categorize the activities is in terms of the professional's area of experience.</p>
+                        <a href="#" class="button is-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                    <div class="box">
+                        <div class="service-icons">
+                            <i class="fab fa-chrome"></i>
+                        </div>
+                        <h3 class="title is-4">Web Development</h3>
+                        <p>One way to categorize the activities is in terms of the professional's area of experience.</p>
+                        <a href="#" class="button is-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                    <div class="box">
+                        <div class="service-icons">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <h3 class="title is-4">UI Design</h3>
+                        <p>One way to categorize the activities is in terms of the professional's area of experience.</p>
+                        <a href="#" class="button is-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                    <div class="box">
+                        <div class="service-icons">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h3 class="title is-4">Mobile App Development</h3>
+                        <p>One way to categorize the activities is in terms of the professional's area of experience.</p>
+                        <a href="#" class="button is-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                    <div class="box">
+                        <div class="service-icons">
+                            <i class="fas fa-pen-square"></i>
+                        </div>
+                        <h3 class="title is-4">Creative Design</h3>
+                        <p>One way to categorize the activities is in terms of the professional's area of experience.</p>
+                        <a href="#" class="button is-primary">Read More</a>
+                    </div>
                 </div>
             </div>
-            <h3>Creative Design</h3>
-            <p>One way to categorize the activities is in terms of the proffesional's area of experience.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-        <div class="box">
-            <div class="s-icons">
-                <i class='bx bx-code-alt'></i>
-            </div>
-            <h3>Creative Design</h3>
-            <p>One way to categorize the activities is in terms of the proffesional's area of experience.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-        <div class="box">
-            <div class="s-icons">
-                <i class='bx bx-edit-alt'></i>
-            </div>
-            <h3>Creative Design</h3>
-            <p>One way to categorize the activities is in terms of the proffesional's area of experience.</p>
-            <a href="#" class="btn">Read More</a>
         </div>
     </section>
-    <footer>
-        <p> copyright messages 2023</p>
+    <footer class="section has-background-dark footer">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="is-flex is-justify-content-flex-start is-fixed-bottom">
+                        <a href="https://t.me/Moon648" target="_blank"><i class="fab fa-telegram fa-lg has-text-light"></i></a>
+                        <a href="https://www.instagram.com/ham64_81?igshid=NGVhN2U2NjQ0Yg=="><i class="fab fa-instagram fa-lg has-text-light"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg has-text-light"></i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="has-text-light">&copy; copy right 2023. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

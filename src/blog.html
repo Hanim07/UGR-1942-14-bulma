@@ -1,59 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        const target = $el.dataset.target;
+                        const $target = document.getElementById(target);
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                        const $navbarItems = $target.querySelectorAll('.navbar-item');
+                        $navbarItems.forEach(function ($item) {
+                            $item.classList.toggle('is-active');
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-
-    <header class="blogheader">
-        <ul class="navlist">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="Aboutpage.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contactme.html">Contact Me</a></li>
-        </ul>
+    <header class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-item logo">Ham<span>moon</span></a>
+            <label class="navbar-burger" id="menu-icon" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <ul class="navbar-end">
+                <li><a class="navbar-item" href="homepage.html">Home</a></li>
+                <li><a class="navbar-item" href="Aboutpage.html">About</a></li>
+                <li><a class="navbar-item" href="services.html">Services</a></li>
+                <li><a class="navbar-item" href="portfolio.html">Portfolio</a></li>
+                <li><a class="navbar-item is-active" href="blog.html">Blog</a></li>
+                <li><a class="navbar-item" href="contactme.html">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <div class="bcontent">
-        <h1 style="font-family: 'Playfair Display', serif;">Blog</h1>
 
-        <div class="bcontainer">
-            <img src="../image/blog1.jpg" alt="Image 1">
-            <p>Embracing the Joy of Lifelong Learning</p>
-            <p> Learning is a lifelong journey, an ever-evolving process that fuels personal growth, expands our horizons, and ignites our curiosity. From the moment we enter the world, we embark on a continuous quest for knowledge and understanding</p>
+    <section class="section blog has-background-dark">
+        <div class="container">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-12">
+                    <div class="main-text has-text-white">
+                        <h2>My <span>Blog</span></h2>
+                    </div>
+                </div>
+                <div class="column is-4 ">
+                    <div class="blog-container box  ">
+                        <img src="image/blog2.jpg" alt="Image 2" class="image">
+                        <p class="title is-size-5">Coffee with Coding</p>
+                        <p class="content">Coffee has long been a beloved companion for many, providing a boost of energy and a moment of respite. Pairing it with coding creates a delightful synergy, blending the invigorating properties of caffeine with the creative process of programming.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="blog-container box">
+                        <img src="image/blog1.jpg" alt="Image 1" class="image">
+                        <p class="title is-size-5">Embracing the Joy of Lifelong Learning</p>
+                        <p class="content">Learning is a lifelong journey, an ever-evolving process that fuels personal growth, expands our horizons, and ignites our curiosity. From the moment we enter the world, we embark on a continuous quest for knowledge and understanding.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="blog-video-container box">
+                        <video src="image/blog3.mp4" controls class="image"></video>
+                        <p class="title is-size-5">Reflections on High School: A Time of Growth, Friendship, and Discovery</p>
+                        <p class="content">High school is a remarkable phase in our lives, encompassing a myriad of experiences that shape our identities and prepare us for the journey ahead. It's a time of transition, growth, and self-discovery.</p>
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <div class="blog-audio-container box">
+                        <h4 class="title is-size-4">From Audios</h4>
+                        <audio controls>
+                            <source src="image/calmingaudio.mp3" type="audio/mp3">
+                        </audio>
+                        <p class="content">Listen to this calming instrumental music while reading a book or working. It's perfect for creating a focused and tranquil environment.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="bvideo-container">
-            <video src="../image/blog3.mp4"  ></video>
-            <p>Reflections on High School: A Time of Growth, Friendship, and Discovery</p>
-            <p>High school is a remarkable phase in our lives, encompassing a myriad of experiences that shape our identities and prepare us for the journey ahead. It's a time of transition, growth, and self-discovery.</p>
+    <footer class="section has-background-dark footer">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="is-flex is-justify-content-flex-start is-fixed-bottom">
+                        <a href="https://t.me/Moon648" target="_blank"><i class="fab fa-telegram fa-lg has-text-light"></i></a>
+                        <a href="https://www.instagram.com/ham64_81?igshid=NGVhN2U2NjQ0Yg=="><i class="fab fa-instagram fa-lg has-text-light"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg has-text-light"></i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="has-text-light">&copy; copy right 2023. All rights reserved.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="bcontainer">
-            <img src="../image/blog2.jpg" alt="Image 2">
-            <p> Coffee has long been a beloved companion for many, providing a boost of energy and a moment of respite. Pairing it with coding creates a delightful synergy, blending the invigorating properties of caffeine with the creative process of programming. </p>
-        </div>
-
-        <div class="baudio-container">
-            <audio controls>
-                <source src="../image/calmingaudio.mp3" type="audio/mp3">
-                Your browser does not support the audio tag.
-            </audio>
-            <p>Listen to this calming instrumental music while reading a book or working. It's perfect for creating a focused and tranquil environment.</p>
-        </div>
-    </div>
-
-    <footer >
-        <p> copyright messages 2023</p>
     </footer>
 
-</body>
 
-</html>
+</body>
+</html>    
+    

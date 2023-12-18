@@ -3,52 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style1.css">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+                        const target = $el.dataset.target;
+                        const $target = document.getElementById(target);
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                        const $navbarItems = $target.querySelectorAll('.navbar-item');
+                        $navbarItems.forEach(function ($item) {
+                            $item.classList.toggle('is-active');
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class="contactmeheader">
-        <ul class="navlist">
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="Aboutpage.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contactme.html">Contact Me</a></li>
-        </ul>
+    <header class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-item logo">Ham<span>moon</span></a>
+            <label class="navbar-burger" id="menu-icon" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <ul class="navbar-end">
+                <li><a class="navbar-item" href="homepage.html">Home</a></li>
+                <li><a class="navbar-item" href="Aboutpage.html">About</a></li>
+                <li><a class="navbar-item" href="services.html">Services</a></li>
+                <li><a class="navbar-item" href="portfolio.html">Portfolio</a></li>
+                <li><a class="navbar-item" href="blog.html">Blog</a></li>
+                <li><a class="navbar-item is-active" href="contactme.html">Contact</a></li>
+            </ul>
+        </div>
     </header>
-    <section class="contact" id="contact">
-        <div class="contact-text">
-            <h2>Contact<span>Me</span></h2>
-            <h4>Contact me in the following address </h4>
-            <p>I am website designer and programmer creating brave interfaces for clients.</p>
-            <div class="list">
-                <ul>
-                    <li>Phone Number  <a href="#">+251967338002</a></li>
-                    <li>E-mail Address  <a href="#">han abd20@gmail.com</a></li>
-                    <li>Address  <a href="#">AAU 5kilo</a></li>
-                </ul>
-            </div>
-            
-            <div class="contact-icons">
-                <a href="#"><i class="bx bxl-telegram"></i></a>
-                <a href="#"><i class="bx bxl-instagram"></i></a>
-                <a href="#"><i class="bx bxl-youtube"></i></a>
+
+
+    <section class="section  has-background-dark contact" id="contact">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds has-text-light">
+                    <div class="content ">
+                        <h2 class="title has-text-light">Contact<span>Me</span></h2>
+                        <h4 class="title has-text-light">You can reach me at this address</h4>
+                        <p>I am a website designer and programmer creating brave interfaces for clients.</p>
+                        <div class="contact-list">
+                            <ul>
+                                <li><i class="fas fa-phone"></i> Phone Number <a href="tel:+251967338002">+251967338002</a></li>
+                                <li><i class="far fa-envelope"></i> E-mail Address <a href="mailto:hanabd20@gmail.com">hanabd20@gmail.com</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i> Address <a href="#">AAU 5kilo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column ">
+                    <div class="box ">
+                        <form action="none" id="form">
+                            <div class="field">
+                                <label class="label">Your Name</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Your E-mail</label>
+                                <div class="control">
+                                    <input class="input" type="email" placeholder="Your E-mail" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Your Phone Number</label>
+                                <div class="control">
+                                    <input class="input" type="number" placeholder="Your Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">How can I help you</label>
+                                <div class="control">
+                                    <textarea class="textarea" placeholder="How can I help you" required></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="submit" value="Send Message" class="button is-primary">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="contact-form">
-            <form action="none">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your E-mail" required>
-                <input type="number" placeholder="Your Phone Number" required>
-                <textarea name="text" id="textarea" cols="35" rows="10" placeholder="How can I help you" required></textarea>
-                <input type="text" value="Send Message" class="submit" required>
-            </form>
-        </div>
-
     </section>
-    <footer>
-        <p> copyright messages 2023</p>
+
+    <footer class="section has-background-dark footer">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="is-flex is-justify-content-flex-start is-fixed-bottom">
+                        <a href="https://t.me/Moon648" target="_blank"><i class="fab fa-telegram fa-lg has-text-light"></i></a>
+                        <a href="https://www.instagram.com/ham64_81?igshid=NGVhN2U2NjQ0Yg=="><i class="fab fa-instagram fa-lg has-text-light"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg has-text-light"></i></a>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="has-text-light">&copy; copy right 2023. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
